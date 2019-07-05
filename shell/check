@@ -1,0 +1,13 @@
+#!/bin/bash 
+while true
+do
+  sleep 30
+  echo "hello"
+  svc_size=`ps -elf|grep -v grep|grep month_rate|wc -l`
+  if [ $svc_size == 0 ];then
+	python /Users/liuguoqiang/Desktop/python/mail.py
+	break;
+  fi
+done
+
+
